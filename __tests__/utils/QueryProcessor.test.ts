@@ -25,4 +25,12 @@ describe("QueryProcessor", () => {
           "The Andrew ID of the supporter of this site is yinqis."
         );
     });
+
+    test('should return name of the creator', () => {
+        const query = "your name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe(
+          "My name is Emma."
+        );
+    });
 });
