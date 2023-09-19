@@ -33,9 +33,9 @@ export default function QueryProcessor(query: string): string {
     return (x*y).toString();
   }
 
-  // const maxMatch = query.match(/Which of the following numbers is the largest: ((\d+)[,?]?)/);
+  // const maxMatch = query.match(/Which of the following numbers is the largest: ((\d+)[,?]?)+/);
   // if (maxMatch) {
-  //   for (let i = 0; i <  )
+    
   // }
 
   const minusMatch = query.match(/What is (\d+) minus (\d+)/);
@@ -43,6 +43,13 @@ export default function QueryProcessor(query: string): string {
     const x: number = parseInt(minusMatch[1]);
     const y: number = parseInt(minusMatch[2]);
     return (x-y).toString();
+  }
+
+  const powerMatch = query.match(/What is (\d+) to the power of (\d+)/);
+  if (powerMatch) {
+    const x: number = parseInt(powerMatch[1]);
+    const y: number = parseInt(powerMatch[2]);
+    return (x**y).toString();
   }
 
   return "";
