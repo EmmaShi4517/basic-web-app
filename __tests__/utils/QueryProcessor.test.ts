@@ -54,4 +54,12 @@ describe("QueryProcessor", () => {
           "30"
         )      
     })
+
+    test ('should give difference of two numbers', () => {
+        const query = "What is 100 minus 30?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe(
+          "70"
+        )
+    })
 });
