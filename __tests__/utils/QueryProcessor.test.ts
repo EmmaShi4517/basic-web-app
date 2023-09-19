@@ -46,4 +46,12 @@ describe("QueryProcessor", () => {
           "153"
         )
     })
+
+    test ('should multiply two numbers asked', () => {
+        const query = "What is 3 multiplied by 10?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe(
+          "30"
+        )      
+    })
 });
