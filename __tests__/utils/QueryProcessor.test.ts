@@ -33,4 +33,17 @@ describe("QueryProcessor", () => {
           "My name is Emma."
         );
     });
+
+    test ('should add two numbers asked', () => {
+        const query1 = "What is 35 plus 1";
+        const response1: string = QueryProcessor(query1);
+        expect(response1).toBe(
+          "36"
+        )
+        const query2 = "What is 98 plus 55";
+        const response2: string = QueryProcessor(query2);
+        expect(response2).toBe(
+          "153"
+        )
+    })
 });
